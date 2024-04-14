@@ -1,0 +1,82 @@
+{
+	"manifest_version": 2,
+  "name": "gopeed-extension-baiduwp",
+  "author": "monkeyWie",
+  "title": "百度网盘下载",
+  "description": "支持百度云下载，SVIP可满速下载",
+  "icon": "icon.png",
+  "version": "1.3.2",
+  "homepage": "https://github.com/monkeyWie/gopeed-extension-baiduwp",
+  "repository": {
+    "url": "https://github.com/monkeyWie/gopeed-extension-baiduwp"
+  },
+  "scripts": [
+    {
+      "event": "onResolve",
+      "match": {
+        "urls": [
+          "*://pan.baidu.com/s/*",
+          "*://pan.baidu.com/disk/main/*",
+          "*://pan.baidu.com/wap/home/*"
+        ]
+      },
+      "entry": "dist/index.js"
+    },
+    {
+      "event": "onStart",
+      "match": {
+        "labels": [
+          "monkeyWie@gopeed-extension-baiduwp"
+        ]
+      },
+      "entry": "dist/index.js"
+    },
+    {
+      "event": "onError",
+      "match": {
+        "labels": [
+          "monkeyWie@gopeed-extension-baiduwp"
+        ]
+      },
+      "entry": "dist/index.js"
+    }
+	],
+	"permissions": [
+		"cookies",
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+	],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "main.html"
+	},
+  "settings": [
+    {
+      "name": "clientId",
+      "title": "Client ID",
+      "description": "百度开放平台应用的client_id",
+      "type": "string",
+      "value": "iYCeC9g08h5vuP9UqvPHKKSVrKFXGa1v"
+    },
+    {
+      "name": "clientSecret",
+      "title": "Client Secret",
+      "description": "百度开放平台应用的client_secret",
+      "type": "string",
+      "value": "jXiFMOPVPCWlO2M5CwWQzffpNPaGTRBG"
+    },
+    {
+      "name": "refreshToken",
+      "title": "Refresh Token",
+      "description": "通过百度开放平台获取的刷新令牌",
+      "type": "string"
+    },
+    {
+      "name": "bduss",
+      "title": "BDUSS",
+      "description": "百度网盘网站Cookie里的BDUSS值，下载分享链接时必填",
+      "type": "string"
+    }
+  ]
+}
