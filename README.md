@@ -6,7 +6,7 @@
 
 ## 安装
 
-打开`Gopeed`扩展页面，输入`https://github.com/monkeyWie/gopeed-extension-baiduwp`，点击安装即可。
+打开`Gopeed`扩展页面，输入`https://github.com/monkeyWie/baiduwp-gopeed-extension`，点击安装即可。
 
 ![](image/install.gif)
 
